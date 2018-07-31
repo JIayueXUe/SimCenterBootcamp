@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <time.h>
+
+int long numSteps=100000;
+int main(){
+	double pi=0; double time=0;
+	//your code
+	double x = 0;
+	double deltx = 1.0 / numSteps;
+	clock_t start, finish;
+	start = clock();
+	for (int i = 0; i < numSteps; i++){
+		//your code
+		x = x + deltx;
+		pi = pi + 4.0 / ((double)(1.0) + x ^ 2) * deltx;
+	}
+	//your code
+	finish = clock();
+	time = (double)(finish - start) / CLOCKS_PER_SEC;
+	
+	printf("PI=%f,duration:%f ms\n", pi, time);
+	return 0;
+}
